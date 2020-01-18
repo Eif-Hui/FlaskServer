@@ -12,7 +12,7 @@ app = Flask(__name__)
 tasks = [
     {
         'id': 1,
-        'title': 'Buy groceries',
+        'title': 'Buy groceries django',
         'description': u'Milk, Cheese, Pizza, Fruit, Tylenol',
         'done': False
     },

@@ -18,7 +18,7 @@ tasks = [
     },
     {
         'id': 2,
-        'title': 'Learn Python flask',
+        'title': 'Learn Python flask django',
         'description': u'Need to find a good Python tutorial on the web',
         'done': False
     }

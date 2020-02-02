@@ -20,7 +20,7 @@ tasks = [
         'id': 2,
         'title': 'Learn Python flask',
         'description': u'Need to find a good Python tutorial on the web',
-        'done': False
+        'done': True
     }
 ]
 
@@ -30,4 +30,4 @@ def get_tasks():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)

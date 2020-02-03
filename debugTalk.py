@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2020/2/3 下午7:24
 # @Author  : Hui
-# @File    : debugtalk.py
+# @File    : debugTalk.py
 
-import datetime
+import datetime,random,string
+
 class BodyVerify(object):
 
     def new_number(self):
@@ -14,8 +15,11 @@ class BodyVerify(object):
         soleDate = NewData[3:]
         return soleDate
 
+    def gen_random_str(self,str_len):
+        return ''.join(random.choice(string.digits) for _ in range(str_len)) #string.ascii_letters + 英文字符
+
 
 
 if __name__ == '__main__':
     req = BodyVerify()
-    req.new_number()
+    req.gen_random_str(12)

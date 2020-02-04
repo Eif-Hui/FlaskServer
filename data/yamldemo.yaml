@@ -1,2 +1,10 @@
-username: admin
-password: admin
+nb1:
+  user: admin
+  psw:  admin
+
+nb2:
+  us: admin
+  psw: admin01
+
+username: ssss
+passwd: ddddd

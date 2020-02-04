@@ -3,7 +3,7 @@
 # @Author  : Hui
 # @File    : debugEif.py
 
-import datetime,random,string,yaml
+import datetime,random,string,yaml,os
 
 class BodyVerify(object):
 
@@ -25,14 +25,18 @@ class BodyVerify(object):
 
     def read_yaml(self,file):
         """
-        :return: 读取yaml文件，转为json输出
+        :param file:  YAML文件路径
+        :return: 读取YAML文件，最终转化为json 输出
         """
-        with open(file,mode='r','utf-8') as file_config:
-            dict_body = yaml.load(file_config.read())
-            return dict_body
+        file = open(file, 'r', encoding ='utf-8')
+        file_data = yaml.load(file.read())
+        return file_data
 
 
 
 if __name__ == '__main__':
+    current_path =  os.path.abspath(".")  # 当前路径
+    yamlPath = os.path.join(current_path,'data/yamldemo.yaml')
+
     req = BodyVerify()
-    req.gen_random_str(12)
+    req.read_yaml(yamlPath)

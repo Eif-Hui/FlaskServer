@@ -29,7 +29,7 @@ class BodyVerify(object):
         """
         with open(file,mode='r','utf-8') as file_config:
             dict_body = yaml.load(file_config.read())
-            pass
+            return dict_body
 
 
 

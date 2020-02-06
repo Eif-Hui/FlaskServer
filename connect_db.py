@@ -3,10 +3,7 @@
 # @Author  : Hui
 # @File    : connect_db.py
 
-import pymysql,os
-from debugEif import BodyVerify
-curpath = os.path.dirname(os.path.realpath(__file__))
-cfgpath = os.path.join(curpath, "config.ini")
+import pymysql
 def get_sql_conn():
     """
     获取数据库连接

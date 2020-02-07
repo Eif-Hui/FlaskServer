@@ -16,10 +16,11 @@ payload = [(1,2,"待支付"),
 class TestHotWheelsRunOrderList(object):
 
     @allure.story('')
-    def test_PageListByStateList(self,data,aer,describe):
+    def test_PageListByStateList(self,data,aer,describe,Assert):
         """丰伙轮管理台跑腿任务-->{}""".format(describe)
-        #allure.attach(describe)
+        #allure.attach(h)
         assert data+1 == aer
+        assert Assert == "a"
 
 if __name__ == '__main__':
     pytest.main()

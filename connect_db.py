@@ -4,15 +4,17 @@
 # @File    : connect_db.py
 
 import pymysql
-def get_sql_conn():
+
+def getSql():
     """
     获取数据库连接
     """
-    conn = pymysql.connect(host='***.***.***.**',
-                           port='***',
-                           user='***',
-                           password='***',
-                           db='***')
+    conn = pymysql.connect(host='120.77.202.176',
+                           port=3306,
+                           user='root',
+                           password='Password.01',
+                           db='testcase',
+                           charset='utf8')
 
     cursor = conn.cursor()
     return conn, cursor
@@ -46,10 +48,12 @@ def get_dict_data_sql(cursor, sql):
     return res
 
 def main(sql):
-    con, cursor = get_sql_conn()
-    return get_dict_data_sql(cursor, sql)[0]
+    con, cursor = getSql()
+    return get_dict_data_sql(cursor, sql)
 
 if __name__ == '__main__':
-    sql = "SELECT * from h_logistics_order WHERE order_no = 'PT202001201452776977'"
-    dd = main(sql)
-    print(dd)
+    sql = "SELECT * from caselist"
+    dictSql = main(sql)
+    print(dictSql)
+
+

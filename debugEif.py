@@ -3,7 +3,7 @@
 # @Author  : Hui
 # @File    : debugEif.py
 
-import datetime, random, string, yaml, os,time
+import datetime, random, string, os,time,yaml
 import configparser # 读取ini配置文件，实例化configparser对象
 
 class BodyVerify(object):
@@ -159,10 +159,10 @@ class TestLogger(object):
 if __name__ == '__main__':
     req = BodyVerify()
     curPath = os.path.dirname(os.path.realpath(__file__))
+    print(curPath)
     cfgPath = os.path.join(curPath, "config.ini")   #  配置文件ini
     req.getConfig(cfgPath,'str','db','host')
 
-    current_path = os.path.abspath(".")  # 当前路径
-    yamlPath = os.path.join(current_path, 'data/yamldemo.yaml')
-    req.readYaml(yamlPath)
+    yamlPath = os.path.join(curPath, 'data/yamldemo.yaml')
+    print(req.readYaml(yamlPath))
 

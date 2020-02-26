@@ -3,7 +3,7 @@
 # @Author  : Hui
 # @File    : app.py
 
-from flask import Flask,jsonify
+from flask import Flask,jsonify,request
 
 
 
@@ -25,9 +25,15 @@ tasks = [
     }
 ]
 
-@app.route('/api/v1.0/tasks', methods=['GET'])
+@app.route('/api/v1.0/tasks', methods=['post'])
 def get_tasks():
-    return jsonify({'tasks': tasks})
+    """获取请求参数"""
+    dd = request.json.get('DDD')  # json
+   # aa = request.form.get('dd')  #  from
+    data = {
+        "dd":dd
+    }
+    return jsonify({'tasks': data})
 
 
 if __name__ == '__main__':

@@ -17,7 +17,7 @@ class TestHotWheelsRunOrderList(object):
 
     @allure.story('')
     def test_PageListByStateList(self,data,aer,describe,Assert):
-        """丰伙轮管理台跑腿任务-->{}""".format(describe)
+        """跑腿任务-->{}""".format(describe)
         #allure.attach(h)
         assert data+1 == aer
         assert Assert == "a"

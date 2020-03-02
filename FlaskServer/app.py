@@ -28,10 +28,12 @@ tasks = [
 @app.route('/api/v1.0/tasks', methods=['post'])
 def get_tasks():
     """获取请求参数"""
-    dd = request.json.get('DDD')  # json
-   # aa = request.form.get('dd')  #  from
+    #dd = request.json.get('DDD')  # json
+    #aa = request.form.get('dd')  #  from
+    aw = request.get_json()
+    ww = aw.get("dd")
     data = {
-        "dd":dd
+        "dd":ww
     }
     return jsonify({'tasks': data})
 

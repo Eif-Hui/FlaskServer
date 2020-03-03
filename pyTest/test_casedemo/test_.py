@@ -8,9 +8,9 @@ import pytest,allure,requests
 from pyTest.pyTestCom import Common
 com = Common('http://127.0.0.1:5000')
 
-data = [("/api/v1.0/tasks",{"dd":"中国"},"demo1",{"tasks": {"dd": "中国"}},{"tasks": {"dd": "中国"}}),
-        ("/api/v1.0/tasks",{"dd":"中国"},"demo2",{"tasks": {"dd": "中国"}},{"tasks": {"dd": "中国"}}),
-        ("/api/v1.0/tasks",{"dd":"中国"},"demo3",{"tasks": {"dd": "中国"}},{"tasks": {"dd": "中国"}})
+data = [("/api/v1.0/tasks",{"dd":"中国"},"demo1a",{"tasks": {"dd": "中国"}},{"tasks": {"dd": "中国"}}),
+        ("/api/v1.0/tasks",{"dd":"中国"},"demo2a",{"tasks": {"dd": "中国"}},{"tasks": {"dd": "中国"}}),
+        ("/api/v1.0/tasks",{"dd":"中国"},"demo3a",{"tasks": {"dd": "中国"}},{"tasks": {"dd": "中国"}})
 ]
 
 @allure.feature('test 文件夹名模块名')

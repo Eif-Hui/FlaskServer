@@ -6,8 +6,8 @@
 import requests
 class Common(object):
 
-    def __init__(self):
-        self.uri = ''
+    def __init__(self,host):
+        self.uri = host
 
     def get(self,path,params=None,header=None):
         url = self.uri + path + params
@@ -18,5 +18,4 @@ class Common(object):
         url = self.uri + path
         res = requests.post(url= url,json= params,headers= header,verify= False)
         return res
-
 

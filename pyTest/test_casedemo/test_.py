@@ -12,15 +12,14 @@ payload = [(1,2,"待支付"),
          (9,10,"全部任务查询")]
 
 @allure.feature('pytest 参数化demo')
-@pytest.mark.parametrize('data,aer,describe', payload)
+@pytest.mark.parametrize('data,aer,title', payload)
 class TestHotWheelsRunOrderList(object):
 
     @allure.story('')
-    def test_PageListByStateList(self,data,aer,describe,Assert):
-        """跑腿任务-->{}""".format(describe)
+    def test_PageListByStateList(self,data,aer,title):
         #allure.attach(h)
+        allure.dynamic.title(title)  # 参数化用例标题title
         assert data+1 == aer
-        assert Assert == "a"
 
 if __name__ == '__main__':
     pytest.main()

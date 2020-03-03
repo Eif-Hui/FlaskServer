@@ -10,8 +10,8 @@ class Common(object):
         self.uri = host
 
     def get(self,path,params=None,header=None):
-        url = self.uri + path + params
-        res = requests.get(url= url,headers= header,verify=False)
+        url = self.uri + path
+        res = requests.get(url= url,params= params,headers= header,verify=False)
         return res
 
     def post(self,path,params,header=None):

@@ -4,22 +4,25 @@
 # @File    : test_.py
 
 
-import pytest,allure
-payload = [(1,2,"待支付"),
-         (3,4,"待分配"),
-         (5,6,"待取货"),
-         (7,8,"配送中"),
-         (9,10,"全部任务查询")]
+import pytest,allure,requests
+from pyTest.pyTestCom import Common
+com = Common('http://127.0.0.1:5000')
+
+data = [("/api/v1.0/tasks",{"dd":"中国"},"demo1",{"tasks": {"dd": "中国"}},{"tasks": {"dd": "中国"}}),
+        ("/api/v1.0/tasks",{"dd":"中国"},"demo2",{"tasks": {"dd": "中国"}},{"tasks": {"dd": "中国"}}),
+        ("/api/v1.0/tasks",{"dd":"中国"},"demo3",{"tasks": {"dd": "中国"}},{"tasks": {"dd": "中国"}})
+]
 
 @allure.feature('test 文件夹名模块名')
-@pytest.mark.parametrize('data,aer,title', payload)
+@pytest.mark.parametrize('path,par,title,expect,expectResult', data)
 class TestHotWheelsRunOrderList(object):
 
     @allure.story('test 文件名')
-    def test_PageListByStateList(self,data,aer,title):
-        allure.attach(title)    #  用例参数，类似log
+    def test_PageListByStateList(self,path,par,title,expect,expectResult):
+        req = com.post(path,par)
+        allure.attach(req.request.body)    #  用例参数，类似log
         allure.dynamic.title(title)  # 参数化用例标题title
-        assert data+1 == aer
+        assert expect == expectResult
 
 if __name__ == '__main__':
     pytest.main()

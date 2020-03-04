@@ -3,9 +3,15 @@
 # @Author  : Hui
 # @File    : pyTestCom.py
 
-def reqPer(req,reqHeader):
-    return f"请求参数:{req.request.body},\n请求header:{reqHeader},\n请求URL:{req.url} ;" \
-            f"HTTP code:{req.status_code},\n响应参数:{req.text};\n响应Header:{req.headers}\n"
+def readYaml(file):
+    """
+    :param file:  YAML文件路径
+    :return: eval函数的作用是将传入的字符串作为表达式来进行计算
+    可以有效去除(双)引号，空格等字符。
+    """
+    file = open(file, 'r', encoding='utf-8')
+    file_data = file.read()
+    return eval(file_data)
 
 import requests
 class Common(object):

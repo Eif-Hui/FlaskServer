@@ -32,6 +32,7 @@ def get_tasks():
     #aa = request.form.get('dd')  #  from
     aw = request.get_json()
     ww = aw.get("dd")
+    print(ww)
     data = {
         "dd":ww
     }

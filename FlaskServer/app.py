@@ -38,6 +38,21 @@ def get_tasks():
     }
     return jsonify({'tasks': data})
 
+@app.route('/db/testCase/insert',methods=['post'])
+def insert_db():
+    caseId = request.get_json('caseId')
+    story = request.get_json('story')
+    title = request.get_json('title')
+    method = request.get_json('method')
+    path = request.get_json('path')
+    req_data = request.get_json('req_data')
+    sql = request.get_json('sql')
+    expect1 = request.get_json('expect1')
+    expect2 = request.get_json('expect2')
+    expect3 = request.get_json('expect3')
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)

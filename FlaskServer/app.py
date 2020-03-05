@@ -25,7 +25,7 @@ tasks = [
     }
 ]
 
-@app.route('/api/v1.0/tasks', methods=['post'])
+@app.route('/api/v1.0/tasks', methods=['post','get'])
 def get_tasks():
     """获取请求参数"""
     #dd = request.json.get('DDD')  # json

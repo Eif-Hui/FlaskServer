@@ -6,8 +6,8 @@
 
 import pytest,allure
 from pyTest.pyTestCom import Common
-from pyTest.db_connect import read_db
-from pyTest.connect_db import *
+from pyTest.dbCase import read_db
+from pyTest.sqlExpect import *
 com = Common('http://127.0.0.1:5000')
 @allure.feature('test 一级标签')
 @pytest.mark.parametrize('caseId,story,title,method,path,req_data,sql,expect1,expect2,expect3', read_db())

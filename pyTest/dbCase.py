@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2020/3/5 下午3:36
 # @Author  : Hui
-# @File    : db_connect.py
+# @File    : dbCase.py
 import pymysql
 def read_db():
     """

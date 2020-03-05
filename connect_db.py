@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2020/2/5 上午11:58
 # @Author  : Hui
-# @File    : connect_db.py
+# @File    : sqlExpect.py
 
 import pymysql
 

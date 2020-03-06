@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
+# coding:utf-8
 # @Time    : 2020/2/6 上午9:17
 # @Author  : Hui
 # @File    : test_yml_case.py
 
 
-import pytest,allure
+import pytest,allure,json
 from pyTest.public.pyTestCom import Common
 from pyTest.public.dbCase import read_db
 from pyTest.public.sqlExpect import *

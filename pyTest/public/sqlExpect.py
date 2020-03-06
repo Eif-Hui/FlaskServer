@@ -52,7 +52,7 @@ def main(sql):
     return get_dict_data_sql(cursor, sql)[0]
 
 if __name__ == '__main__':
-    sql = "SELECT * from caselist"
+    sql = "SELECT * from TestCaseList"
     dictSql = main(sql)
     print(dictSql)
 

@@ -13,9 +13,12 @@ def get_tasks():
     """获取请求参数"""
     #dd = request.json.get('DDD')  # json
     #aa = request.form.get('dd')  #  from
-    aw = request.get_json()
-    ww = aw.get("dd")
-    return jsonify({'tasks': ww})
+    #aw = request.get_json() # 获取全部参数
+    if request.method == "POST":
+        ww = request.json.get('dd')
+        return jsonify({'tasks': ww})
+    else:
+        return jsonify({'task':{"dd":"您到请求方式是 GET"}})
 
 @app.route('/db/testCase/dataCollect', methods=['post'])
 def dataCollect():
@@ -31,8 +34,8 @@ def dataCollect():
         expect1 = request.json.get('expect1')
         expect2 = request.json.get('expect2')
         expect3 = request.json.get('expect3')
-        if (len(story)> 0 )&(len(title)> 0 )&(len(method)> 0 )&(len(path)> 0 )\
-                &(len(req_data)> 0 )&(len(sql)>0)&(len(expect1)>0)&(len(expect2)>0)&(len(expect3)>0):  #判断不为空，则写入数据库
+        if (len(story)> 0 )&(len(title)> 0 )&(len(method)> 0 )&(len(path)> 0 )&(len(req_data)> 0 )\
+                &(len(sql)>0)&(len(expect1)>0)&(len(expect2)>0)&(len(expect3)>0):  #判断不为空，则写入数据库
             sql_insert = "insert into TestCaseList value(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
             insert_database(sql_insert,caseId,story,title,method,path,req_data,sql,expect1,expect2,expect3)
             return jsonify({"code": 200, "msg": "Data insert successful."})

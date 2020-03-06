@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# coding:utf-8
 # @Time    : 2020/3/2 下午11:54
 # @Author  : Hui
 # @File    : pyTestCom.py
@@ -13,7 +14,7 @@ def readYaml(file):
     file_data = file.read()
     return eval(file_data)
 
-import requests
+import requests,json
 class Common(object):
 
     def __init__(self,host):
@@ -21,11 +22,10 @@ class Common(object):
 
     def get(self,path,params=None,header=None):
         url = self.uri + path
-        res = requests.get(url= url,params= params,headers= header,verify=False)
+        res = requests.get(url= url,params= eval(params),headers= header,verify=False)
         return res
-
     def post(self,path,params,header=None):
         url = self.uri + path
-        res = requests.post(url= url,json= params,headers= header,verify= False)
+        res = requests.post(url= url,json= json.loads(params),headers= header,verify= False)
         return res
 

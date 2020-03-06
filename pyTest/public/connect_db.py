@@ -20,6 +20,19 @@ def getSql():
     return conn, cursor
 
 
+def insert_database(sql,*args):#插入数据
+    conn, cursor = getSql()
+    cursor.execute('use testcase')
+    try:
+        cursor.execute(sql,args)
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return True
+    except:
+        print("Error:数据插入失败")
+        return None
+
 def get_index_dict(cursor):
     """
     获取数据库对应表中的字段名
@@ -52,7 +65,7 @@ def main(sql):
     return get_dict_data_sql(cursor, sql)
 
 if __name__ == '__main__':
-    sql = "SELECT * from caselist"
+    sql = "SELECT * from TasetCaseList"
     dictSql = main(sql)
     print(dictSql)
 

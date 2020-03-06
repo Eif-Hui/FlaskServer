@@ -5,8 +5,8 @@
 
 
 import pytest,allure,os
-from pyTest.pyTestCom import Common
-from pyTest.pyTestCom import readYaml
+from pyTest.public.pyTestCom import Common
+from pyTest.public.pyTestCom import readYaml
 com = Common('http://127.0.0.1:5000')
 
 data = [("/api/v1.0/tasks",{"dd":"中国"},"demo1a",{"tasks": {"dd": "中国"}},{"tasks": {"dd": "中国"}}),

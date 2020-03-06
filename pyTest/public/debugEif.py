@@ -13,8 +13,10 @@ class BodyVerify(object):
         :return: 根据当前时间生成唯一数
         """
         NewData = '{0:%Y%m%d%H%M%S%f}'.format(datetime.datetime.now())
-        soleDate = NewData[3:]
+        soleDate = NewData[4:]
         return soleDate
+
+
 
     def randomStamp(self,a, b):
         """
@@ -158,6 +160,7 @@ class TestLogger(object):
 
 if __name__ == '__main__':
     req = BodyVerify()
+    print(req.newNumber())
     curPath = os.path.dirname(os.path.realpath(__file__))
     print(curPath)
     cfgPath = os.path.join(curPath, "config.ini")   #  配置文件ini
@@ -165,4 +168,5 @@ if __name__ == '__main__':
 
     yamlPath = os.path.join(curPath, 'data/yamldemo.yaml')
     print(req.readYaml(yamlPath))
+
 

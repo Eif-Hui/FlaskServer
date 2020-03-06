@@ -2,7 +2,7 @@
 # @Time    : 2020/1/18 下午5:06
 # @Author  : Hui
 # @File    : app.py
-
+import datetime
 from flask import Flask,jsonify,request
 from apps.database import insert_database
 
@@ -21,7 +21,7 @@ def get_tasks():
 def dataCollect():
     if request.method == 'POST':
         # 获取请求参数是json格式，返回结果是字典
-        caseId = request.json.get('caseId')
+        caseId = '{0:%Y%m%d%H%M%S}'.format(datetime.datetime.now())[4:]
         story = request.json.get('story')
         title = request.json.get('title')
         method = request.json.get('method')
@@ -31,7 +31,7 @@ def dataCollect():
         expect1 = request.json.get('expect1')
         expect2 = request.json.get('expect2')
         expect3 = request.json.get('expect3')
-        if (len(caseId)> 0 )&(len(story)> 0 )&(len(title)> 0 )&(len(method)> 0 )&(len(path)> 0 )\
+        if (len(story)> 0 )&(len(title)> 0 )&(len(method)> 0 )&(len(path)> 0 )\
                 &(len(req_data)> 0 )&(len(sql)>0)&(len(expect1)>0)&(len(expect2)>0)&(len(expect3)>0):  #判断不为空，则写入数据库
             sql_insert = "insert into TestCaseList value(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
             insert_database(sql_insert,caseId,story,title,method,path,req_data,sql,expect1,expect2,expect3)

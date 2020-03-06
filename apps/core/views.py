@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2020/1/18 下午5:06
 # @Author  : Hui
-# @File    : views.py
+# @File    : app.py
 
 from flask import Flask,jsonify,request
 from apps.database import insert_database

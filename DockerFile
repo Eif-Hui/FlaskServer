@@ -2,4 +2,4 @@ FROM python:3.7.3
 WORKDIR .
 ADD . .
 RUN pip install -r requirements.txt
-CMD ["pytest", "-q","TestCase/AIMP/Connect/AIMP_Connect_01.py","--alluredir","allure-results"]
+CMD ["pytest", "-q","pyTest/setupMain.py","--alluredir","allure-results"]

@@ -163,7 +163,7 @@ tornado==5.1.1
 traitlets==4.3.3
 tzlocal==1.4
 uritemplate==3.0.0
-urllib3==1.24.1
+urllib3==1.24.2
 vine==1.1.4
 virtualenv==16.0.0
 visitor==0.1.3

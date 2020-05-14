@@ -3,5 +3,5 @@ ENV PATH /usr/local/bin:$PATH
 WORKDIR .
 ADD . .
 RUN pip install -r requirements.txt
-CMD ["pytest", "-q","pyTest/setupMain.py","--alluredir","allure-results"]
+CMD ["pytest", "-q","pyTest/","--alluredir","allure-results"]
 
